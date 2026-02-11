@@ -293,7 +293,7 @@ export default function PreviewInvoicePage() {
                   </th>
                 </tr>
               </thead>
-              <tbody style={{ flex: 1, display: 'block', overflow: 'auto', background: 'transparent' }}>
+              <tbody style={{ flex: 1, display: 'block', overflow: 'auto', background: 'repeating-linear-gradient(0deg, #fafafa 0px, #fafafa 10px, #f5f5f5 10px, #f5f5f5 20px)' }}>
                 {invoice.items.map((item, index) => (
                   <tr key={index} style={{ display: 'table', width: '100%', tableLayout: 'fixed' }}>
                     <td style={{ 
