@@ -1,0 +1,380 @@
+/* ========================================
+   STYLES POUR FACTURE - FORMAT A4
+   Modifiable selon vos besoins
+   ======================================== */
+
+/* === VARIABLES === */
+:root {
+  /* Couleurs */
+  --invoice-primary: #000000;
+  --invoice-secondary: #333333;
+  --invoice-accent: #000000;
+  --invoice-border: #cccccc;
+  --invoice-bg-header: #f0f0f0;
+  --invoice-bg-total: #e0e0e0;
+  
+  /* Espacement */
+  --invoice-padding: 40px;
+  --invoice-margin-section: 30px;
+}
+
+/* === CONTAINER PRINCIPAL === */
+.invoice-container {
+  max-width: 800px;
+  padding: 40px 20px;
+  margin: 0 auto;
+}
+
+.invoice-preview {
+  background: white;
+  color: var(--invoice-primary);
+  padding: var(--invoice-padding);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === EN-TÊTE ENTREPRISE === */
+.invoice-header {
+  text-align: center;
+  margin-bottom: var(--invoice-margin-section);
+  border-bottom: 3px solid var(--invoice-primary);
+  padding-bottom: 20px;
+}
+
+.invoice-company-name {
+  font-size: 2em;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  color: var(--invoice-primary);
+  text-transform: uppercase;
+}
+
+.invoice-company-logo {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+.invoice-company-info {
+  font-size: 0.95em;
+  color: var(--invoice-secondary);
+  line-height: 1.6;
+}
+
+.invoice-company-info div {
+  margin: 3px 0;
+}
+
+/* === TITRE FACTURE === */
+.invoice-title {
+  font-size: 1.8em;
+  color: var(--invoice-primary);
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* === INFORMATIONS FACTURE & CLIENT === */
+.invoice-info-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: var(--invoice-margin-section);
+}
+
+.invoice-info-block {
+  padding: 15px;
+  border: 1px solid var(--invoice-border);
+  border-radius: 5px;
+  background: #fafafa;
+}
+
+.invoice-info-block strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--invoice-primary);
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.invoice-info-block div {
+  margin: 5px 0;
+  color: var(--invoice-secondary);
+}
+
+/* === TABLEAU ARTICLES === */
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--invoice-margin-section);
+  border: 1px solid var(--invoice-primary);
+}
+
+.invoice-table thead tr {
+  background: var(--invoice-bg-header);
+}
+
+.invoice-table th {
+  border: 1px solid var(--invoice-primary);
+  padding: 12px 10px;
+  text-align: left;
+  color: var(--invoice-primary);
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.invoice-table th.text-center {
+  text-align: center;
+}
+
+.invoice-table th.text-right {
+  text-align: right;
+}
+
+.invoice-table td {
+  border: 1px solid var(--invoice-primary);
+  padding: 10px;
+  color: var(--invoice-primary);
+  vertical-align: top;
+}
+
+.invoice-table td.text-center {
+  text-align: center;
+}
+
+.invoice-table td.text-right {
+  text-align: right;
+}
+
+/* Détails des articles */
+.invoice-item-description {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.invoice-item-details {
+  font-size: 0.9em;
+  color: var(--invoice-secondary);
+  margin: 0;
+  padding-left: 15px;
+  line-height: 1.6;
+}
+
+.invoice-item-details li {
+  margin: 3px 0;
+}
+
+/* Ligne de total */
+.invoice-table tfoot tr {
+  background: var(--invoice-bg-total);
+  font-weight: bold;
+}
+
+.invoice-table tfoot td {
+  padding: 15px 10px;
+  font-size: 1.1em;
+}
+
+.invoice-total-amount {
+  color: var(--invoice-accent);
+  font-size: 1.3em;
+}
+
+/* === MONTANT EN LETTRES === */
+.invoice-amount-words {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: var(--invoice-margin-section);
+  border: 1px solid var(--invoice-border);
+}
+
+.invoice-amount-words strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--invoice-primary);
+}
+
+.invoice-amount-words div {
+  font-size: 1.05em;
+  font-style: italic;
+  color: var(--invoice-secondary);
+}
+
+/* === NOTES === */
+.invoice-notes {
+  margin-bottom: var(--invoice-margin-section);
+  padding: 15px;
+  background: #f9f9f9;
+  border-left: 4px solid var(--invoice-accent);
+  border-radius: 3px;
+}
+
+.invoice-notes strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--invoice-primary);
+}
+
+.invoice-notes div {
+  white-space: pre-wrap;
+  color: var(--invoice-secondary);
+  line-height: 1.6;
+}
+
+/* === SIGNATURES === */
+.invoice-signatures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 60px;
+}
+
+.invoice-signature-block {
+  text-align: center;
+}
+
+.invoice-signature-title {
+  font-weight: bold;
+  margin-bottom: 70px;
+  color: var(--invoice-primary);
+}
+
+.invoice-signature-line {
+  border-top: 1px solid var(--invoice-primary);
+  padding-top: 8px;
+  color: var(--invoice-secondary);
+  font-size: 0.9em;
+}
+
+/* === FOOTER === */
+.invoice-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--invoice-border);
+  font-size: 0.85em;
+  text-align: center;
+  color: #999;
+}
+
+/* === CALCUL DE MARGE (Interface uniquement) === */
+.invoice-margin-info {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.invoice-margin-ok {
+  background: #d4edda;
+  border-color: #28a745;
+  color: #155724;
+}
+
+.invoice-margin-warning {
+  background: #fff3cd;
+  border-color: #ffc107;
+  color: #856404;
+}
+
+.invoice-margin-danger {
+  background: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+/* ========================================
+   STYLES POUR IMPRESSION
+   ======================================== */
+
+@media print {
+  /* Masquer les éléments non imprimables */
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Reset du body */
+  body {
+    background: white !important;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Page A4 */
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+  
+  /* Container */
+  .invoice-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .invoice-preview {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    page-break-after: avoid;
+  }
+  
+  /* Éviter les coupures */
+  .invoice-header,
+  .invoice-info-section,
+  .invoice-amount-words,
+  .invoice-signatures {
+    page-break-inside: avoid;
+  }
+  
+  /* Optimisation des tableaux */
+  .invoice-table {
+    page-break-inside: auto;
+  }
+  
+  .invoice-table tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  
+  .invoice-table thead {
+    display: table-header-group;
+  }
+  
+  .invoice-table tfoot {
+    display: table-footer-group;
+  }
+  
+  /* Ajuster les marges */
+  .invoice-margin-info {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   UTILITAIRES
+   ======================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}

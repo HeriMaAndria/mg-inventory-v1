@@ -1,0 +1,23 @@
+/* ================================================
+   MAIN.CSS - Point d'entrée CSS
+   Importe tous les fichiers dans le bon ordre
+   ================================================ */
+
+/* 1. Base */
+@import './_variables.css';
+@import './_reset.css';
+@import './global.css';
+
+/* 2. Layout */
+@import './layout/app-layout.css';
+@import './layout/sidebar.css';
+
+/* 3. Components */
+@import './components/buttons.css';
+@import './components/cards-forms.css';
+
+/* 4. Utilities */
+@import './utilities.css';
+
+/* 5. Pages spécifiques (si besoin) */
+@import './invoice.css';
