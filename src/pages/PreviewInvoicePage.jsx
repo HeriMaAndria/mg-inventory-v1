@@ -184,12 +184,11 @@ export default function PreviewInvoicePage() {
               </div>
             </div>
 
-            {/* DROITE : Facture & Client */}
+            {/* DROITE : Facture & Client combinés */}
             <div>
               <div style={{ 
                 background: '#f5f5f5', 
-                padding: '4mm', 
-                marginBottom: '4mm',
+                padding: '4mm',
                 border: '1px solid #000'
               }}>
                 <div style={{ fontWeight: 'bold', fontSize: '12pt', marginBottom: '2mm' }}>
@@ -197,24 +196,24 @@ export default function PreviewInvoicePage() {
                   {invoice.type === 'credit_note' && 'FACTURE D\'AVOIR'}
                   {(!invoice.type || invoice.type === 'standard') && 'FACTURE'}
                 </div>
-                <div style={{ fontSize: '8pt' }}>
+                <div style={{ fontSize: '8pt', marginBottom: '3mm' }}>
                   <div><strong>N°:</strong> {invoice.number}</div>
                   <div><strong>Date:</strong> {new Date(invoice.date).toLocaleDateString('fr-FR')}</div>
                 </div>
-              </div>
-
-              <div style={{ 
-                background: '#f5f5f5', 
-                padding: '4mm',
-                border: '1px solid #000'
-              }}>
-                <div style={{ fontWeight: 'bold', fontSize: '9pt', marginBottom: '2mm' }}>
-                  CLIENT
-                </div>
-                <div style={{ fontSize: '8pt' }}>
-                  <div>{invoice.client.name}</div>
-                  {invoice.client.phone && <div>Tél: {invoice.client.phone}</div>}
-                  {invoice.client.address && <div>{invoice.client.address}</div>}
+                
+                <div style={{ 
+                  borderTop: '1px solid #ccc', 
+                  paddingTop: '3mm',
+                  marginTop: '3mm'
+                }}>
+                  <div style={{ fontWeight: 'bold', fontSize: '9pt', marginBottom: '2mm' }}>
+                    CLIENT
+                  </div>
+                  <div style={{ fontSize: '8pt' }}>
+                    <div>{invoice.client.name}</div>
+                    {invoice.client.phone && <div>Tél: {invoice.client.phone}</div>}
+                    {invoice.client.address && <div>{invoice.client.address}</div>}
+                  </div>
                 </div>
               </div>
             </div>
@@ -294,7 +293,7 @@ export default function PreviewInvoicePage() {
                   </th>
                 </tr>
               </thead>
-              <tbody style={{ flex: 1, display: 'block', overflow: 'auto' }}>
+              <tbody style={{ flex: 1, display: 'block', overflow: 'auto', background: 'transparent' }}>
                 {invoice.items.map((item, index) => (
                   <tr key={index} style={{ display: 'table', width: '100%', tableLayout: 'fixed' }}>
                     <td style={{ 
