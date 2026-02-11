@@ -149,7 +149,7 @@ export default function PreviewInvoicePage() {
             fontFamily: 'Arial, sans-serif',
             display: 'flex',
             flexDirection: 'column',
-            justifyContente: 'space-bettween'
+            justifyContent: 'space-between'
           }}
         >
           {/* EN-TÊTE : Gauche (Entreprise) / Droite (Facture & Client) */}
@@ -431,7 +431,6 @@ export default function PreviewInvoicePage() {
               </div>
             </div>
           </div>
-</div>
           {/* FOOTER */}
           <div style={{ 
             marginTop: '10mm',
@@ -444,6 +443,7 @@ export default function PreviewInvoicePage() {
             Facture générée le {new Date().toLocaleDateString('fr-FR')} à {new Date().toLocaleTimeString('fr-FR')}
           </div>
         </div>
+          </div>
       </div>
 
       {/* Styles pour l'impression */}
