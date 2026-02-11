@@ -139,14 +139,17 @@ export default function PreviewInvoicePage() {
           ref={invoiceRef}
           style={{
             width: '210mm',
-            minHeight: '297mm',
+            height: '297mm',
             background: '#ffffff',
             padding: '10mm',
             boxShadow: isFullscreen ? 'none' : '0 4px 8px rgba(0,0,0,0.1)',
             fontSize: '9pt',
             lineHeight: '1.4',
             color: '#000000',
-            fontFamily: 'Arial, sans-serif'
+            fontFamily: 'Arial, sans-serif',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContente: 'space-bettween'
           }}
         >
           {/* EN-TÊTE : Gauche (Entreprise) / Droite (Facture & Client) */}
@@ -196,20 +199,6 @@ export default function PreviewInvoicePage() {
                 <div style={{ fontSize: '8pt' }}>
                   <div><strong>N°:</strong> {invoice.number}</div>
                   <div><strong>Date:</strong> {new Date(invoice.date).toLocaleDateString('fr-FR')}</div>
-                  {settings.responsibleNumber && (
-                    <div><strong>Responsable:</strong> {settings.responsibleNumber}</div>
-                  )}
-                  <div style={{ marginTop: '2mm' }}>
-                    <strong>Statut:</strong>{' '}
-                    <span style={{ 
-                      color: invoice.status === 'confirmed' ? '#28a745' : invoice.status === 'cancelled' ? '#dc3545' : '#ff9800',
-                      fontWeight: 'bold'
-                    }}>
-                      {invoice.status === 'confirmed' && '✓ CONFIRMÉE'}
-                      {invoice.status === 'cancelled' && '✗ ANNULÉE'}
-                      {(!invoice.status || invoice.status === 'draft') && '◐ BROUILLON'}
-                    </span>
-                  </div>
                 </div>
               </div>
 
@@ -418,6 +407,7 @@ export default function PreviewInvoicePage() {
           )}
 
           {/* SIGNATURES */}
+          <div>
           <div style={{ 
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
@@ -441,7 +431,7 @@ export default function PreviewInvoicePage() {
               </div>
             </div>
           </div>
-
+</div>
           {/* FOOTER */}
           <div style={{ 
             marginTop: '10mm',
