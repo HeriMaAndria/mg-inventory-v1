@@ -324,11 +324,6 @@ export default function PreviewInvoicePage() {
                       width: '30%'
                     }}>
                       {item.description}
-                      {item.reference && (
-                        <div style={{ fontSize: '7pt', fontWeight: 'normal', color: '#666', marginTop: '1mm' }}>
-                          Réf: {item.reference}
-                        </div>
-                      )}
                     </td>
                     <td style={{ 
                       border: '1px solid #000', 
