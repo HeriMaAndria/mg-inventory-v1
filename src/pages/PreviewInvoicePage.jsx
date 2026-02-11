@@ -220,6 +220,7 @@ export default function PreviewInvoicePage() {
           </div>
 
           {/* TABLEAU ARTICLES : DÉTAILS | DÉSIGNATION | QTÉ | P.U | MT */}
+          <div>
           <table style={{ 
             width: '100%', 
             borderCollapse: 'collapse',
@@ -405,7 +406,7 @@ export default function PreviewInvoicePage() {
               </div>
             </div>
           )}
-
+          </div>
           {/* SIGNATURES */}
           <div>
           <div style={{ 
